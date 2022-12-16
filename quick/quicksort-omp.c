@@ -38,17 +38,17 @@ void quicksort(int * a, int p, int r)
     if (p < r){ 
         int div = partition(a, p, r); 
 
-// Parallel sections
-#pragma omp parallel sections
+        // Parallel sections
+        #pragma omp parallel sections
         {
-#pragma omp section
+            // sort the first half.
+            #pragma omp section
             {
-                // sort the first half.
                 quicksort(a, p, div - 1);
             }
-#pragma omp section
+            // sort the second half.
+            #pragma omp section
             {
-                // sort the second half.
                 quicksort(a, div + 1, r);
             }
         }

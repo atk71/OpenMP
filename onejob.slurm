@@ -2,6 +2,7 @@
 #SBATCH --time=00:10:00 
 #SBATCH -N 2 -n 4 -c 4
 #SBATCH -p class # GPU partition
+#SBATCH --gres=gpu:2
 #SBATCH -A sxg125_csds438 
 #SBATCH --mem=4gb # Assign 4gb memory
 
